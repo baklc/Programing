@@ -318,7 +318,7 @@ def youtubedownload():
                               downloaddirreplace + i + ".mp3")
                     print("{} converting successful".format(countingnum))
                     countingnum += 1
-
+            print("everything finished")
         elif mp3ormp4 == 2 and downloaddir:
             print("mp4")
             for listsss in youtubelist_name:
@@ -332,7 +332,7 @@ def youtubedownload():
                 lllllq += 1
                 if len(youtubelist_name) == lllllq:
                     break
-
+            print("everything is finished")
         else:
             # print(downloaddir)
             if not downloaddir and mp3ormp4 == 0:
@@ -380,11 +380,12 @@ def youtubedownload():
                 print("{} converting successful".format(countingnum))
                 countingnum += 1
 
-
+            print("everything is finished")
         elif mp3ormp4 == 2 and downloaddir:
             print("mp4")
             yt = YouTube(a)
             yt.streams.filter().first().download(downloaddir)
+            print("everything is finished")
         else:
             # print(downloaddir)
             if not downloaddir and mp3ormp4 == 0:
