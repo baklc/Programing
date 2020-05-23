@@ -8,6 +8,7 @@ import tkinter.font
 import os
 import pytube
 from pytube import YouTube
+import glob
 
 import time
 
@@ -17,7 +18,13 @@ downloaddir=""
 youtubelist_name = []
 youtubelist=[]
 soup =''
+titlereplaced= ""
 
+def clear():
+    global youtubelist_name, youtubelist, a
+    youtubelist.clear()
+    youtubelist_name.clear()
+    a = ""
 
 root = tkinter.Tk()
 root.title("YUN DAE HEE")
@@ -54,10 +61,11 @@ def onemp4ormp3(url):
     YouTube(url).streams.first().download()
 
 def calc(event):
-
+    clear()
     global playlistoronelink
     global a
-    global soup
+    global soup, titlereplaced
+    titlereplaced =""
     numm = 1
     a = frame1_entry.get()
     print(a)
@@ -117,9 +125,10 @@ def calc(event):
 
 
                 titlereplace = titlee.replace('\n    ', '')
+                titlereplaced = "{}".format(titlereplace.replace('\n  ', ''))
 
+                window1_list.insert(END,titlereplaced)
 
-                window1_list.insert(END, titlereplace)
                 window1_list.pack()
                 nextframe_gonextbutton.config(state='normal')
             else:
@@ -259,9 +268,11 @@ window2_emptylabel3.pack(side="top")
 ###download 창
 
 def youtubedownload():
+    global titlereplaced
    # print(a)
-    #print(len(youtubelist_name2))
+    print(len(youtubelist_name2))
     lllll=0
+    lllllq=0
     if len(youtubelist_name2) != 0:
         print("playlist")
         if mp3ormp4 == 1 and downloaddir:
@@ -273,13 +284,55 @@ def youtubedownload():
 
                 nnnn = youtubelist[numberlist]
                 yt = YouTube(nnnn)
-                yt.streams.filter(only_audio=True).first().download()
+                yt.streams.filter(only_audio=True).first().download(downloaddir)
                 lllll += 1
                 if len(youtubelist_name) == lllll:
                     break
+
+            specialword = ['\\', '/', ':', '*', '?', "\"", '<', '>', '|']
+
+            for i in youtubelist_name:
+                youtubelist_nameindex = youtubelist_name.index(i)
+                print(i)
+                for ii in specialword:
+                    if ii in str(i):
+                        incheck = i.replace(ii, '')
+                        youtubelist_name[youtubelist_nameindex] = incheck
+                        print("True")
+
+            countingnum = 0
+            downloaddirreplace = downloaddir.replace('/','\\')+'\\'
+            print(downloaddirreplace)
+            downloaddirmp3=os.listdir(downloaddir)
+
+
+            print(youtubelist_name)
+
+            for i in youtubelist_name:
+                print(i)
+                if i + ".mp3" in downloaddirmp3:
+                    continue
+                if i + ".mp4" in downloaddirmp3:
+
+                    os.rename(downloaddirreplace + i + ".mp4",
+                              downloaddirreplace + i + ".mp3")
+                    print("{} converting successful".format(countingnum))
+                    countingnum += 1
+
         elif mp3ormp4 == 2 and downloaddir:
             print("mp4")
-            YouTube(a).streams.filter().first().download(downloaddir)
+            for listsss in youtubelist_name:
+                numberlist = youtubelist_name.index(listsss)
+
+                print(youtubelist_name[numberlist], "\n||", youtubelist[numberlist])
+
+                nnnn = youtubelist[numberlist]
+                yt = YouTube(nnnn)
+                yt.streams.filter().first().download(downloaddir)
+                lllllq += 1
+                if len(youtubelist_name) == lllllq:
+                    break
+
         else:
             # print(downloaddir)
             if not downloaddir and mp3ormp4 == 0:
@@ -295,9 +348,43 @@ def youtubedownload():
         print("watch")
         if mp3ormp4 == 1 and downloaddir:
             print("mp3")
+            yt = YouTube(a)
+            yt.streams.filter(only_audio=True).first().download(downloaddir)
+
+            specialword = ['\\', '/', ':', '*', '?', "\"", '<', '>', '|']
+
+            title = titlereplaced
+            print(title)
+            for ii in specialword:
+                if ii in str(titlereplaced):
+                    incheck = titlereplaced.replace(ii, '')
+                    titlereplaced = incheck
+
+                    print("True")
+
+            countingnum = 0
+            downloaddirreplace = downloaddir.replace('/','\\')+'\\'
+            print(downloaddirreplace)
+            downloaddirmp3=os.listdir(downloaddir)
+
+
+            print(youtubelist_name)
+
+
+
+            if titlereplaced + ".mp3" in downloaddirmp3:
+                return
+            if titlereplaced + ".mp4" in downloaddirmp3:
+                os.rename(downloaddirreplace + titlereplaced + ".mp4",
+                          downloaddirreplace + titlereplaced + ".mp3")
+                print("{} converting successful".format(countingnum))
+                countingnum += 1
+
 
         elif mp3ormp4 == 2 and downloaddir:
             print("mp4")
+            yt = YouTube(a)
+            yt.streams.filter().first().download(downloaddir)
         else:
             # print(downloaddir)
             if not downloaddir and mp3ormp4 == 0:
@@ -320,3 +407,4 @@ root.mainloop()
 
 
 
+#dd
