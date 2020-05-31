@@ -27,7 +27,7 @@ def clear():
     a = ""
 
 root = tkinter.Tk()
-root.title("YUN DAE HEE")
+root.title("YouTube video/mp3 downloader - kimhyilim")
 windowWidth = root.winfo_reqwidth()
 windowHeight = root.winfo_reqheight()
 print("Width", windowWidth, "Height", windowHeight)
