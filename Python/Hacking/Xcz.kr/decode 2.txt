@@ -1,0 +1,57 @@
+<?
+${"GLOBALS"}["gasyarknd"]="b";
+
+${"GLOBALS"}["rwliiiqfvfp"]="i";
+
+function h($a){
+	${"GLOBALS"}["pxzweahruqok"]="b";
+	${${"GLOBALS"}["pxzweahruqok"]}="";
+	${"GLOBALS"}["uxoiiikapcv"]="b";
+	for(${${"GLOBALS"}["rwliiiqfvfp"]}=0;
+		${${"GLOBALS"}["rwliiiqfvfp"]}<5;
+		${${"GLOBALS"}["rwliiiqfvfp"]}++){
+        $ydzorvqk="a";
+		$gflrozo="b";
+		${"GLOBALS"}["erpxzozdey"]="i";
+		${$gflrozo}=${${"GLOBALS"}["gasyarknd"]}+ord(substr(${$ydzorvqk},${${"GLOBALS"}["erpxzozdey"]},1));
+	}
+	return${${"GLOBALS"}["uxoiiikapcv"]};
+}
+$jbojdbertutk="KEY";
+$vtefigaylx="mun";
+${"GLOBALS"}["hpceeyxto"]="a";
+$ktjmdjm="a";
+${"GLOBALS"}["mimtemucybpc"]="mun";
+${$jbojdbertutk}="Congratulations!</br>Key is ?????????????????????";
+${"GLOBALS"}["gmfifbfl"]="a";
+${${"GLOBALS"}["mimtemucybpc"]}=@$_GET["key"];
+${"GLOBALS"}["wvdcxsdsqb"]="x";
+
+@${$ktjmdjm}=explode("-",${$vtefigaylx});
+$gfxqkfxurga="x";
+$dlmordkk="a";
+
+for(${${"GLOBALS"}["wvdcxsdsqb"]}=0;
+	${${"GLOBALS"}["wvdcxsdsqb"]}<5;
+	${$gfxqkfxurga}++){
+	if(preg_match("/[^a-zA-Z0-9]/",@${${"GLOBALS"}["hpceeyxto"]}[${${"GLOBALS"}["wvdcxsdsqb"]}])){
+    exit("Error!");
+    }
+}
+if(is_numeric(substr(${${"GLOBALS"}["hpceeyxto"]}[0],0,2))&&!is_numeric(substr(${${"GLOBALS"}["hpceeyxto"]}[0],4,1))&&h(${${"GLOBALS"}["gmfifbfl"]}[0])>312&&h(${${"GLOBALS"}["hpceeyxto"]}[0])<333&&!is_numeric(substr(${$dlmordkk}[1],0,1))&&is_numeric(substr(${${"GLOBALS"}["hpceeyxto"]}[1],3,2))){
+    $qcpkjlbgy="a";
+    ${"GLOBALS"}["oqotjbvn"]="a";
+    ${"GLOBALS"}["bbghzot"]="a";
+    if(h(${${"GLOBALS"}["bbghzot"]}[1])>300&&h(${$qcpkjlbgy}[1])<326&&!is_numeric(substr(${${"GLOBALS"}["hpceeyxto"]}[2],0,1))&&is_numeric(substr(${${"GLOBALS"}["hpceeyxto"]}[2],1,1))&&h(${${"GLOBALS"}["oqotjbvn"]}[2])>349&&h(${${"GLOBALS"}["hpceeyxto"]}[2])<407){
+        ${"GLOBALS"}["wsjuxwxbzms"]="a";
+        ${"GLOBALS"}["ofvmiatcdko"]="a";
+        $oqhejquzit="a";
+        if(!is_numeric(substr(${${"GLOBALS"}["wsjuxwxbzms"]}[3],0,2))&&is_numeric(substr(${$oqhejquzit}[3],2,3))&&h(${${"GLOBALS"}["ofvmiatcdko"]}[3])>357&&h(${${"GLOBALS"}["hpceeyxto"]}[3])<359){
+            ${"GLOBALS"}["erqqjpct"]="a";
+            ${"GLOBALS"}["okgondfidky"]="a";
+            if(round((h(${${"GLOBALS"}["hpceeyxto"]}[0])+h(${${"GLOBALS"}["okgondfidky"]}[1])+h(${${"GLOBALS"}["hpceeyxto"]}[2])+h(${${"GLOBALS"}["hpceeyxto"]}[3]))/4)==h(${${"GLOBALS"}["erqqjpct"]}[4])){
+            $oaqqkxn="KEY";
+                exit(${$oaqqkxn});
+}}}}echo"Wrong T.T";
+
+?>

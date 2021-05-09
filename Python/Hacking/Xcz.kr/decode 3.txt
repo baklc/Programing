@@ -1,0 +1,31 @@
+<?
+function h($a)
+{
+    $b = "";
+    for ($i = 0; $i < 5; $i++) {
+        $b = $b + ord(substr($a, $i, 1));
+    }
+    return $b;
+}
+
+$KEY = "Congratulations!</br>Key is ?????????????????????";
+$mun = @$_GET["key"];
+@$a = explode("-", $mun);
+
+for ($x = 0; $x < 5; $x++) {
+    if (preg_match("/[^a-zA-Z0-9]/", @$a[$x])) {
+        exit("Error!");
+    }
+}
+if (is_numeric(substr($a[0], 0, 2)) && !is_numeric(substr($a[0], 4, 1)) && h($a[0]) > 312 && h($a[0]) < 333 && !is_numeric(substr($a[1], 0, 1)) && is_numeric(substr($a[1], 3, 2))) {
+    if (h($a[1]) > 300 && h($a[1]) < 326 && !is_numeric(substr($a[2], 0, 1)) && is_numeric(substr($a[2], 1, 1)) && h($a[2]) > 349 && h($a[2]) < 407) {
+        if (!is_numeric(substr($a[3], 0, 2)) && is_numeric(substr($a[3], 2, 3)) && h($a[3]) > 357 && h($a[3]) < 359) {
+            if (round((h($a[0]) + h($a[1]) + h($a[2]) + h($a[3])) / 4) == h($a[4])) {
+                exit($KEY);
+            }
+        }
+    }
+}
+echo "Wrong T.T";
+
+?>

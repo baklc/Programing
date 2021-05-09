@@ -1,0 +1,26 @@
+xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
+**숫자는 배열 위치
+
+0. abcde
+a, b : 숫자
+e : 영어
+h 값 : 313~332
+
+1. abcde
+
+a : 영어
+d, e : 숫자
+h 값 : 301~326
+
+2. abcde
+a : 영어
+b : 숫자
+h 값 : 350~406
+
+3. abcde
+a, b : 영어
+c, d, e : 숫자
+h 값 : 358
+
+4. 
+1,2,3,4의 h 값 / 4 == 5의 h 값
